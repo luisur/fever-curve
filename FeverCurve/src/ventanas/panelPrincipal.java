@@ -42,14 +42,16 @@ public class panelPrincipal extends JPanel implements ActionListener{
 	        jbP3.addActionListener(this);
 	 
 
-	 
+	        
 	        jbP1.setBounds(300, 100, 150, 50); jbP2.setBounds(300, 350, 150, 50); jbP3.setBounds(300,215, 150, 50); 
 	 
 
-	        jfM.add(jbP1); jfM.add(jbP2); jfM.add(jbP3);
-	 
+	        jfM.add(jbP1);
+	        jfM.add(jbP2); 
+	        jfM.add(jbP3);
 	        
-	        jfM.setLocation(100, 50);
+	        
+	        jfM.setLocation(200, 50);
 	        jfM.setResizable(false);
 	        jfM.setVisible(true);
 	        jfM.setSize(800, 600);

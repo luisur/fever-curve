@@ -3,7 +3,7 @@ package j_Snake.PanelMain.Serpiente;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
-/**public class bomba {
+public class bomba {
 	
 	 public bomba() {
 		 
@@ -45,4 +45,4 @@ import java.util.Random;
 	    
 	    
 }
-*/
+

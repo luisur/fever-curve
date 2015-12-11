@@ -45,11 +45,11 @@ public class Ayuda extends JDialog implements ActionListener {
 				panelAyuda.add(scrollPane);
 				textArea.setText("\n                                  Snake\n                               ---------------\n\n" +
 						"     Pulsa jugar.\n" +
-						"     Este boton te llevara a una ventana en la que tendras que elegir la dificultad. \n" +
-						"     Los niveles se diferencian por el nuemro de bombas existentes. \n"+
-						"     El ordenador genera estas bombas aleatoriamente. \n "+
-						"     La mision de la serpiente es comer las maximas frutas posibles. \n"+
-						"     Cada vez que la serpiente come una fruta se incrementa en uno su longitud. \n"+
+						"     Ya ha llegado fever curve!. \n" +
+						"     Es un juego para ds jugadores. \n"+
+						"     El jugador 1 movera su serpiente con las flechas direccionales. \n "+
+						"     El jugador 2 movera su serpiente con el teclado( WASD ). \n"+
+						"      El que obtenga mas puntos en la partida gana!. \n"+		
 						"     Cada vez que la serpiente come una fruta se suma 20 al contador.\n"+
 						"     Al morir aparecera una ventana en la que se indique la puntuacion total obtenida.\n"); 
 				
