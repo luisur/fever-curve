@@ -30,6 +30,8 @@ public class miPanel extends JPanel  {
 	private boolean Primer_Movimiento=true;
 
 	private final MY_Thread mithread=new MY_Thread();
+	private final MY_Thread mithread2=new MY_Thread();
+
 	private final int tamaño_Objeto =ejecutor.get_tamaño_Objeto();
 
 	private final int IZQUIERDA = 37;
@@ -41,12 +43,14 @@ public class miPanel extends JPanel  {
 
 
 	public miPanel(int i) {
+		System.out.println("miPanel");
 		nivel=i;
 
 
 		setBorder(border);
 
 		mithread.start();
+		mithread2.start();
 
 	}
 	public   void paintComponent(Graphics g) {
@@ -101,7 +105,25 @@ public class miPanel extends JPanel  {
 	class MY_Thread extends Thread {
 		public   void run() {
 			while(true) {
-				ejecutor.Mover_mySnake(direccion, false, false);
+				ejecutor.Mover_mySnake(direccion, false, false,2);
+				try {
+
+					Thread.sleep(100);
+				} catch (InterruptedException ex) {
+					ex.printStackTrace();
+				}
+				repaint();
+				if(ejecutor.get_Game_over()) {
+					stop();
+				}
+			}
+		}
+	}
+
+	class MY_Thread2 extends Thread {
+		public   void run() {
+			while(true) {
+				ejecutor.Mover_mySnake(direccion, false, false,1);
 				try {
 
 					Thread.sleep(100);

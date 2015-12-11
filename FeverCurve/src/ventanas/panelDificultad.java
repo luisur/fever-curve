@@ -20,7 +20,7 @@ public class panelDificultad extends JPanel implements ActionListener{
 	 JButton jb1, jb2, jb3, jbP1, jbP2, jbP3;    
 	 
 	    public panelDificultad(){
-	 
+	 System.out.println("panelDificultad");
 	        JFrame jfM = new JFrame("Elegir la dificultad");  
 	        jfM.setLayout(null);
 	 

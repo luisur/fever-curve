@@ -21,6 +21,7 @@ public class MainJuego extends JApplet implements KeyListener{
    
 	private int nivel;
 	public MainJuego(int i){
+		System.out.println("main");
 		nivel=i;
 	}
     public void init() {
@@ -61,6 +62,17 @@ public class MainJuego extends JApplet implements KeyListener{
         } else if(e.getKeyCode()==ABAJO) {
             snakePanel.set_Direction(3);
         } else if(e.getKeyCode()==IZQUIERDA) {
+            snakePanel.set_Direction(4);
+        }
+        
+        
+        else if(e.getKeyChar() == 'w' ) {
+            snakePanel.set_Direction(1);
+        } else if (e.getKeyChar()== 'd') {
+            snakePanel.set_Direction(2);
+        } else if(e.getKeyChar()=='s') {
+            snakePanel.set_Direction(3);
+        } else if(e.getKeyChar()=='a') {
             snakePanel.set_Direction(4);
         }
     }

@@ -17,6 +17,7 @@ public class ejecutarJuego {
 	private boolean Game_Over;
 	private boolean Moving_vertical=false;
 	private Serpiente snake=new Serpiente();
+	private Serpiente snake2= new Serpiente();
 	private final Fruta snakeFruta=new Fruta();
 	private final bomba snakebomba =new bomba();
 	private int step_to_move=20;    
@@ -29,10 +30,10 @@ public class ejecutarJuego {
 
 	}
 
-	public   void Mover_mySnake(int newDireccion,boolean Comer_Fruta,boolean Comer_bomba)
+	public   void Mover_mySnake(int newDireccion,boolean Comer_Fruta,boolean Comer_bomba, int numSnake)
 	{
 
-
+System.out.println("ejecutarJuego");
 		if(!Game_Over)
 		{
 

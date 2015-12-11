@@ -17,15 +17,13 @@ import javax.swing.JPanel;
 
 public class panelPrincipal extends JPanel implements ActionListener{
 
-	public void set_Direction(int i) {
-		
-	}
+
 	
 	 JPanel jp1, jp2, jp3;
 	 JButton jbP1, jbP2, jbP3;    
 	 
 	    public panelPrincipal(){
-	 
+	 System.out.println("panelPrincipal");
 	        JFrame jfM = new JFrame("Juego snake");  
 	        jfM.setLayout(null);
 	 
