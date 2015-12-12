@@ -16,12 +16,24 @@ public class Serpiente {
 	private final int tamaño_Objeto=20;
 
 
-	public Serpiente() {
-		for(int i=0;i<snake_length;i++) {
+	public Serpiente(int numSnake) {
+		System.out.println("creando serpiente "+ numSnake);
+		if(numSnake==1){
+			for(int i=0;i<snake_length;i++) {
 
-			PostionsX[i]=20;
-			PostionsY[i]=20;
+				PostionsX[i]=20;
+				PostionsY[i]=20;
 
+			}
+		}
+		else if(numSnake==2){
+			for(int i=0;i<snake_length;i++) {
+
+				PostionsX[i]=30;
+				PostionsY[i]=30;
+
+
+			}
 		}
 	}
 
@@ -49,17 +61,20 @@ public class Serpiente {
 
 		{
 			if((PostionsX[i]==headX)&&(PostionsY[i]==headY)) {
+				System.out.println(PostionsX[i] + "--" + headX );
+				System.out.println(PostionsY[i] + "--" + headY );
 
-
+				System.out.println("1");
 				return true;
 			}
 		}
 		if(headX<0||headX>1150||headY<0||headY>650) {
-
+			System.out.println("2");
 			return true;
 		}
 
 		return false;
+
 	}
 
 	public boolean compararConLaPosicionFruta(int x,int y) {

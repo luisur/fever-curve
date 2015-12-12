@@ -26,6 +26,7 @@ public class MainJuego extends JApplet implements KeyListener{
 	}
     public void init() {
         setSize(540,540);
+        System.out.println("init");
         Container cpane=getContentPane();
         
         

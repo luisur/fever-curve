@@ -50,8 +50,9 @@ public class miPanel extends JPanel  {
 		setBorder(border);
 
 		mithread.start();
+		
 		mithread2.start();
-
+	
 	}
 	public   void paintComponent(Graphics g) {
 		super.paintComponent(g);

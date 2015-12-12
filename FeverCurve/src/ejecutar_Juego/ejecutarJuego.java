@@ -16,8 +16,8 @@ public class ejecutarJuego {
 	private int direccion=2;
 	private boolean Game_Over;
 	private boolean Moving_vertical=false;
-	private Serpiente snake=new Serpiente();
-	private Serpiente snake2= new Serpiente();
+	private Serpiente snake;
+	private Serpiente snake2;
 	private final Fruta snakeFruta=new Fruta();
 	private final bomba snakebomba =new bomba();
 	private int step_to_move=20;    
@@ -26,83 +26,174 @@ public class ejecutarJuego {
 
 
 	public ejecutarJuego() 
-	{
-
+	{ 
+		Game_Over=false;
+		System.out.println("ejecutarJuego");
+		snake=new Serpiente(1);
+		snake2=new Serpiente(2);
 	}
 
 	public   void Mover_mySnake(int newDireccion,boolean Comer_Fruta,boolean Comer_bomba, int numSnake)
 	{
 
-System.out.println("ejecutarJuego");
-		if(!Game_Over)
-		{
+		System.out.println("mover snake "+ numSnake);
 
-			switch(newDireccion)
-			{
-			case 1:    if(direccion!=3)
-			{
-				snake.ponerPosicionCabeza(0,-step_to_move);
-				direccion=1;
-			}
-			else move_as_last(direccion);
-			break;//ARRIBA
+		if (numSnake==1) {
+			
 
-			case 2:   if(direccion!=4)   
+
+			if(!Game_Over)
 			{
-				snake.ponerPosicionCabeza(step_to_move,0);
-				direccion=2; 
-			}
-			else move_as_last(direccion);
-			break;//DERECHA
-			case 3:    
-				if(direccion!=1)
+
+				switch(newDireccion)
 				{
-					snake.ponerPosicionCabeza(0,step_to_move);
-					direccion=3;
-				}
-				else move_as_last(direccion);
-				break;//ABAJO
-
-			case 4:   
-				if(direccion!=2)
+				case 1:    if(direccion!=3)
 				{
-					snake.ponerPosicionCabeza(-step_to_move,0);
-					direccion=4; 
+					snake.ponerPosicionCabeza(0,-step_to_move);
+					direccion=1;
 				}
-				else move_as_last(direccion);
+				else move_as_last(direccion, numSnake);
+				break;//ARRIBA
 
-				break;//IZQUIERDA
-			} 
-
-			if(contadorMov==5)
-			{
-				snake.Increase_lenght();// Si la serpiente come la fruta
-				contadorMov=0;
-			}
-			snake.Mover_snake();
-			contadorMov++;
-
-			if((snake.getHeadX()==snakeFruta.get_int_X())&&(snake.getHeadY()== snakeFruta.get_int_Y()))
-			{
-				snakeFruta.getFruta();
-				Score+=20;
-
-				snake.Increase_lenght();
-				while(check_Fruta_place())
+				case 2:   if(direccion!=4)   
 				{
-					snakeFruta.getFruta();    
+					snake.ponerPosicionCabeza(step_to_move,0);
+					direccion=2; 
+				}
+				else move_as_last(direccion, numSnake);
+				break;//DERECHA
+				case 3:    
+					if(direccion!=1)
+					{
+						snake.ponerPosicionCabeza(0,step_to_move);
+						direccion=3;
+					}
+					else move_as_last(direccion, numSnake);
+					break;//ABAJO
+
+				case 4:   
+					if(direccion!=2)
+					{
+						snake.ponerPosicionCabeza(-step_to_move,0);
+						direccion=4; 
+					}
+					else move_as_last(direccion, numSnake);
+
+					break;//IZQUIERDA
+				} 
+
+				if(contadorMov==5)
+				{
+					snake.Increase_lenght();// Si la serpiente come la fruta
+					contadorMov=0;
+				}
+				snake.Mover_snake();
+				contadorMov++;
+
+				if((snake.getHeadX()==snakeFruta.get_int_X())&&(snake.getHeadY()== snakeFruta.get_int_Y()))
+				{
+					snakeFruta.getFruta();
+					Score+=20;
+
+					snake.Increase_lenght();
+					while(check_Fruta_place())
+					{
+						snakeFruta.getFruta();    
+					}
+
 				}
 
+				//Game_Over=snake.check_game_over();
+
+
 			}
-
-			Game_Over=snake.check_game_over();
-
+			if(Game_Over)
+			{
+				JOptionPane.showConfirmDialog(null,"Puntuacion = "+Integer.toString(Score),"Puntuaion partida",JOptionPane.DEFAULT_OPTION);
+			}
 
 		}
-		if(Game_Over)
-		{
-			JOptionPane.showConfirmDialog(null,"Puntuacion = "+Integer.toString(Score),"Puntuaion partida",JOptionPane.DEFAULT_OPTION);
+		else if (numSnake==2) {
+			System.out.println( "moverSnake 2");
+			if(!Game_Over)
+			{
+				System.out.println("se mueve");
+				switch(newDireccion)
+				{
+				case 1:    if(direccion!=3)
+				{
+					System.out.println("se mueve 1");
+					
+					snake2.ponerPosicionCabeza(0,-step_to_move);
+					direccion=1;
+				}
+				else move_as_last(direccion, numSnake);
+				break;//ARRIBA
+
+				case 2:   if(direccion!=4)   
+				{
+					System.out.println("se mueve 2");
+					snake2.ponerPosicionCabeza(step_to_move,0);
+					direccion=2; 
+				
+				}
+				else move_as_last(direccion, numSnake);
+				break;//DERECHA
+				case 3:    
+					if(direccion!=1)
+					{
+						System.out.println("se mueve 3");
+						snake2.ponerPosicionCabeza(0,step_to_move);
+						direccion=3;
+					}
+					else move_as_last(direccion, numSnake);
+					break;//ABAJO
+
+				case 4:   
+					if(direccion!=2)
+					{
+						snake2.ponerPosicionCabeza(-step_to_move,0);
+						direccion=4; 
+					}
+					else move_as_last(direccion, numSnake);
+
+					break;//IZQUIERDA
+				} 
+
+				if(contadorMov==5)
+				{
+					snake2.Increase_lenght();// Si la serpiente come la fruta
+					contadorMov=0;
+				}
+				snake2.Mover_snake();
+				contadorMov++;
+
+				if((snake2.getHeadX()==snakeFruta.get_int_X())&&(snake.getHeadY()== snakeFruta.get_int_Y()))
+				{
+					snakeFruta.getFruta();
+					Score+=20;
+
+					snake2.Increase_lenght();
+					while(check_Fruta_place())
+					{
+						snakeFruta.getFruta();    
+					}
+
+				}
+
+				Game_Over=snake.check_game_over();
+
+
+			}
+			if(Game_Over)
+			{
+				JOptionPane.showConfirmDialog(null,"Puntuacion = "+Integer.toString(Score),"Puntuaion partida",JOptionPane.DEFAULT_OPTION);
+			}
+
 		}
+
+
+
 	}
 
 
@@ -123,35 +214,67 @@ System.out.println("ejecutarJuego");
 	//            
 	//        }
 	//    }*/
-	public void move_as_last(int diirec)
+	public void move_as_last(int diirec, int numSnake)
 	{
-		switch(direccion)
-		{
-		case 1:    
+		if(numSnake==1){
 
-			snake.ponerPosicionCabeza(0,-step_to_move);
+			switch(direccion)
+			{
+			case 1:    
 
-
-			break;//ARRIBA
-
-		case 2:    
-			snake.ponerPosicionCabeza(step_to_move,0);
-
-			break;//DERECHA
-		case 3:    
-
-			snake.ponerPosicionCabeza(0,step_to_move);
-
-			break;//ABAJO
-
-		case 4:   
-
-			snake.ponerPosicionCabeza(-step_to_move,0);
+				snake.ponerPosicionCabeza(0,-step_to_move);
 
 
-			break;//IZQUIERDA
-		} 
+				break;//ARRIBA
 
+			case 2:    
+				snake.ponerPosicionCabeza(step_to_move,0);
+
+				break;//DERECHA
+			case 3:    
+
+				snake.ponerPosicionCabeza(0,step_to_move);
+
+				break;//ABAJO
+
+			case 4:   
+
+				snake.ponerPosicionCabeza(-step_to_move,0);
+
+
+				break;//IZQUIERDA
+			} 
+		}
+		else if(numSnake==2){
+			System.out.println(" move_as_last 2");
+			switch(direccion)
+			{
+			case 1:    
+
+				snake2.ponerPosicionCabeza(0,-step_to_move);
+
+
+				break;//ARRIBA
+
+			case 2:    
+				snake2.ponerPosicionCabeza(step_to_move,0);
+
+				break;//DERECHA
+			case 3:    
+
+				snake2.ponerPosicionCabeza(0,step_to_move);
+
+				break;//ABAJO
+
+			case 4:   
+
+				snake2.ponerPosicionCabeza(-step_to_move,0);
+
+
+				break;//IZQUIERDA
+			} 
+
+		}
 
 	}
 	public int[] return_Snake_postionsX()
