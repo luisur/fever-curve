@@ -6,52 +6,52 @@ public class Serpiente2 {
 
 	
 	
-	   private int headX=60;
-	    private int headY=60;
-	    private int[] PostionsX=new int[300];
-	    private int[] PostionsY=new int[300];
-	    private int snake_length=5;
-	    private final int tamaño_Objeto=20;
+	private int headZ=60;
+    private int headJ=60;
+    private int[] PostionsZ=new int[300];
+    private int[] PostionsJ=new int[300];
+    private int snake_length2=5;
+    private final int tamaño_Objeto=20;
 	    
 	    
-	    public Serpiente2() {
-	        for(int i=0;i<snake_length;i++) {
-	            PostionsX[i]=20;
-	            PostionsY[i]=20;
+    public Serpiente2() {
+        for(int i=0;i<snake_length2;i++) {
+            PostionsZ[i]=60;
+            PostionsJ[i]=60;
 	            
-	        }
-	    }
+        }
+    }
 	    
-	    public   void Mover_snake() {
-	        for(int i=0;i<snake_length;i++) {
-	            PostionsX[snake_length-i]=PostionsX[snake_length-(i+1)];
-	            PostionsY[snake_length-i]=PostionsY[snake_length-(i+1)];
+	    public   void Mover_snake2() {
+	        for(int i=0;i<snake_length2;i++) {
+	            PostionsZ[snake_length2-i]=PostionsZ[snake_length2-(i+1)];
+	            PostionsJ[snake_length2-i]=PostionsJ[snake_length2-(i+1)];
 	            
 	            
 	        }
 	        
-	        PostionsX[0]=headX;
-	        PostionsY[0]=headY;
+	        PostionsZ[0]=headZ;
+	        PostionsJ[0]=headJ;
 	      
 	    }
 	    
 	  
 	    public    void ponerPosicionCabeza(int x,int y) {
-	        headX+=x;
-	        headY+=y;
+	        headZ+=x;
+	        headJ+=y;
 	        
 	    }
 	    public    boolean check_game_over() {
-	        for(int i=1;i<snake_length;i++)
+	        for(int i=1;i<snake_length2;i++)
 	            
 	        {
-	            if((PostionsX[i]==headX)&&(PostionsY[i]==headY)) {
+	            if((PostionsZ[i]==headZ)&&(PostionsJ[i]==headJ)) {
 	                
 	                
 	                return true;
 	            }
 	        }
-	        if(headX<0||headX>1150||headY<0||headY>650) {
+	        if(headZ<0||headZ>1150||headJ<0||headJ>650) {
 	            
 	            return true;
 	        }
@@ -59,10 +59,10 @@ public class Serpiente2 {
 	        return false;
 	    }
 	    
-	    public boolean compararConLaPosicionFruta(int x,int y) {
+	    public boolean compararConLaPosicionFruta2(int z,int j) {
 	        
-	        for(int i=0;i<snake_length;i++) {
-	            if(x==PostionsX[i]&&y==PostionsY[i]) {
+	        for(int i=0;i<snake_length2;i++) {
+	            if(z==PostionsZ[i]&&j==PostionsJ[i]) {
 	                return true;
 	            }
 	        }
@@ -70,10 +70,10 @@ public class Serpiente2 {
 	        return false;
 	    }
 	    
-	 public boolean compararConLaPosicionBomba(int x,int y) {
+	 public boolean compararConLaPosicionBomba2(int z,int j) {
 	        
-	        for(int i=0;i<snake_length;i++) {
-	            if(x==PostionsX[i]&&y==PostionsY[i]) {
+	        for(int i=0;i<snake_length2;i++) {
+	            if(z==PostionsZ[i]&&j==PostionsJ[i]) {
 	                return true;
 	            }
 	        }
@@ -81,33 +81,33 @@ public class Serpiente2 {
 	        return false;
 	    }
 	    
-	    public synchronized void Increase_lenght() {
-	        snake_length++;
+	    public synchronized void Increase_lenght2() {
+	        snake_length2++;
 	    }
 	    
-	    public int get_lenght() {
-	        return snake_length;
+	    public int get_lenght2() {
+	        return snake_length2;
 	    }
 	    
-	    public int get_tamaño_Objeto() {
+	    public int get_tamaño_Objeto2() {
 	        return tamaño_Objeto;
 	    }
 	    
 	    
 	    
-	    public int[] get_All_postionsX() {
-	        return PostionsX;
+	    public int[] get_All_postionsZ() {
+	        return PostionsZ;
 	    }
 	    
-	    public int[] get_All_postionsY() {
-	        return PostionsY;
+	    public int[] get_All_postionsJ() {
+	        return PostionsJ;
 	    }
 	    
-	    public int getHeadX() {
-	        return  PostionsX[0];
+	    public int getHeadZ() {
+	        return  PostionsZ[0];
 	    }
-	    public int getHeadY() {
-	        return  PostionsY[0];
+	    public int getHeadJ() {
+	        return  PostionsJ[0];
 	    }
 	    
 	   
