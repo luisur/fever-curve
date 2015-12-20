@@ -7,12 +7,12 @@ public class bomba {
 	
 	 public bomba() {
 		 
-		 posicion_Bomba.setLocation((((int)((Math.random()*(100)))%20)*20),((((int)(Math.random()*(10)))%20)*20));
+		 posicion_Bomba.setLocation((((int)((Math.random()*(4200)))%50)*20),((((int)(Math.random()*(1000)))%50)*20));
 	        int x=(int)posicion_Bomba.getX();
 	        int y=(int)posicion_Bomba.getY();
 	        
-	        while(x>260||y>260) {
-	        	posicion_Bomba.setLocation((((int)((Math.random()*(100)))%20)*20),((((int)(Math.random()*(10)))%20)*20));
+	        while(x>1200||y>700) {
+	        	posicion_Bomba.setLocation((((int)((Math.random()*(4200)))%50)*20),((((int)(Math.random()*(1000)))%50)*20));
 	            x=(int)posicion_Bomba.getX();
 	            y=(int)posicion_Bomba.getY();
 	        }
@@ -20,7 +20,7 @@ public class bomba {
 	    }
 	    public void getbomba() {
 	       
-	    	posicion_Bomba.setLocation((((int)((Math.random()*(100)))%20)*20),((((int)(Math.random()*(10)))%20)*20));
+	    	posicion_Bomba.setLocation((((int)((Math.random()*(4200)))%50)*20),((((int)(Math.random()*(4000)))%50)*20));
 	        
 	        
 	        

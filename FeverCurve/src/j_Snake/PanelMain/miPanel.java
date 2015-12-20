@@ -95,27 +95,27 @@ private int nivel;
         g2D.setColor(Color.RED);
         g2D.fillOval(ejecutor.get_Fruta_X()+5,ejecutor.get_Fruta_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
         
-      //  g2D.setColor(Color.black);
-      //  g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
+      g2D.setColor(Color.black);
+      g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
         
         
      if (nivel==1) { 
     	 //pones una bomba
      }else if(nivel==2){
         	
-           //     g2D.setColor(Color.black);
-          //  g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
+            g2D.setColor(Color.black);
+          g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
         
                 
         }else if(nivel==3){
         	//pones dos bombas
                 
                 
-        	//    g2D.setColor(Color.black);
-         //   g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
+        	    g2D.setColor(Color.black);
+           g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
             
-            //    g2D.setColor(Color.black);
-          //  g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
+              g2D.setColor(Color.black);
+          g2D.fillOval(ejecutor.get_Bomba_X()+5,ejecutor.get_Bomba_Y()+5,tamaño_Objeto-5,tamaño_Objeto-5);
         }
     }
     

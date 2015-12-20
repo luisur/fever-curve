@@ -43,15 +43,15 @@ public class Ayuda extends JDialog implements ActionListener {
 				textArea.setRows(30);//largura del jpanel
 				textArea.setColumns(50);//ancho de jpanel
 				panelAyuda.add(scrollPane);
-				textArea.setText("\n                                  Snake\n                               ---------------\n\n" +
-						"     Pulsa jugar.\n" +
-						"     Ya ha llegado fever curve!. \n" +
-						"     Es un juego para ds jugadores. \n"+
-						"     El jugador 1 movera su serpiente con las flechas direccionales. \n "+
-						"     El jugador 2 movera su serpiente con el teclado( WASD ). \n"+
-						"      El que obtenga mas puntos en la partida gana!. \n"+		
-						"     Cada vez que la serpiente come una fruta se suma 20 al contador.\n"+
-						"     Al morir aparecera una ventana en la que se indique la puntuacion total obtenida.\n"); 
+				textArea.setText("\n                                  Curve Fever\n                               ---------------\n\n" +
+						"   Pulsa el boton jugar para acceder a los distintos niveles. \n" +
+						"   Ya ha llegado el fever curve!. \n" +
+						"   Es un juego creado para dos jugadores en el que el ultimo superviviente gana. \n"+
+						"   El jugador 1 movera su serpiente con las flechas direccionales. \n "+
+						"   El jugador 2 movera su serpiente con el teclado( WASD ). \n"+
+						"   El que obtenga mas puntos en la partida gana... siempre que sea el ultimo superviviente! \n"+		
+						"   Cada vez que la serpiente come una fruta se suma 20 puntos a su marcador.\n"+
+						"   Al morir aparecera una ventana en la que se indique la puntuacion total obtenida.\n"); 
 				
 						     
 				textArea.setCaretPosition(0);   
